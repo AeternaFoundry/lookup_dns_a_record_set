@@ -1,13 +1,13 @@
 output "a_record_set_lookup_id" {
-  description = "Map of id values across all a_record_set_lookup, keyed the same as var.a_record_set_lookup except keys with no id are omitted"
-  value       = { for k, v in data.dns_a_record_set.a_record_set_lookup : k => v.id if v.id != null && length(v.id) > 0 }
+  description = "Map of id values across all a_record_set_lookup, keyed the same as var.a_record_set_lookup"
+  value       = { for k, v in data.dns_a_record_set.a_record_set_lookup : k => v.id }
 }
 output "a_record_set_lookup_addrs" {
-  description = "Map of addrs values across all a_record_set_lookup, keyed the same as var.a_record_set_lookup except keys with no addrs are omitted"
-  value       = { for k, v in data.dns_a_record_set.a_record_set_lookup : k => v.addrs if v.addrs != null && length(v.addrs) > 0 }
+  description = "Map of addrs values across all a_record_set_lookup, keyed the same as var.a_record_set_lookup"
+  value       = { for k, v in data.dns_a_record_set.a_record_set_lookup : k => v.addrs }
 }
 output "a_record_set_lookup_host" {
-  description = "Map of host values across all a_record_set_lookup, keyed the same as var.a_record_set_lookup except keys with no host are omitted"
-  value       = { for k, v in data.dns_a_record_set.a_record_set_lookup : k => v.host if v.host != null && length(v.host) > 0 }
+  description = "Map of host values across all a_record_set_lookup, keyed the same as var.a_record_set_lookup"
+  value       = { for k, v in data.dns_a_record_set.a_record_set_lookup : k => v.host }
 }
 
